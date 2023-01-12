@@ -34,6 +34,12 @@ public class Splash {
         System.out.println("\033[92m"); // ANSI code for green
         for (String line : lines) {
             System.out.println(line); // Print each line of the splash header
+            try {
+                Thread.sleep(100);
+            }
+            catch (Exception e) {
+                System.out.println("How did you mess up on the splash header of all things");
+            }
         }
         System.out.println("\033[0m"); // ANSI end code
     }

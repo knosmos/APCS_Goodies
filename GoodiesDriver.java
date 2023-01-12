@@ -45,13 +45,14 @@ public class GoodiesDriver {
                     int productIndex = customerMenu.getInput() - 1;
                     Product selectedProduct = customerMenu.getItem(productIndex);
                     customer.addToTotal(selectedProduct.getSalePrice());
-                    System.out.printf("You have added %s to your cart.\n", selectedProduct.getName());
+                    System.out.printf("You have added \033[92m%s\033[0m to your cart.\n", selectedProduct.getName());
 
                     // prompt
                     System.out.println("Would you like to buy more? (y/n)");
                     continueShop = scan.next().equals("y");
                 } while (continueShop);
-                System.out.printf("Your total is $%.2f\n", customer.getTotal());
+                // print total and exit to main menu
+                System.out.printf("\nYour total is \033[92m$%.2f\033[0m\n", customer.getTotal());
                 System.out.println("Thank you for shopping with us! :)\n");
             }
 
