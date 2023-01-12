@@ -15,6 +15,7 @@ public class Splash {
     Scanner sc;
     File file;
     ArrayList<String> lines = new ArrayList<String>();
+
     public Splash(String filename) {
         // load file
         try {

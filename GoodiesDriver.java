@@ -29,6 +29,8 @@ public class GoodiesDriver {
 
         CustomerMenu customerMenu = new CustomerMenu(products);
 
+        InventoryMenu inventoryMenu = new InventoryMenu(products);
+
         // Initialize customer
         Customer customer = new Customer();
         Scanner scan = new Scanner(System.in);
@@ -44,6 +46,9 @@ public class GoodiesDriver {
             if (selection == 1) {
                 businessMenu.displayMenu();
                 int businessSelection = businessMenu.getInput();
+                if (businessSelection == 1) {
+                    inventoryMenu.displayMenu();
+                }
             }
 
             // Customer selected

@@ -38,4 +38,8 @@ public class Product {
     public String toString() {
         return String.format("%-15s$%-10.2f", name, salePrice); 
     }
+
+    public String detailedInfo() {
+        return String.format("%-15s%-8d$%-10.2f$%-10.2f", name, quantity, costPrice, salePrice); 
+    }
 }
