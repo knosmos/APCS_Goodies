@@ -36,6 +36,7 @@ public class Menu {
             System.out.println(
                 String.format("\033[91m[%d]\033[0m %s", i+1, this.items[i])
             );
+            delay();
         }
     }
 
@@ -50,5 +51,15 @@ public class Menu {
             result = scan.nextInt();
         } while (result <= 0 || result > this.numItems);
         return result;
+    }
+
+    // small delay to make the menu display look cooler
+    public void delay() {
+        try {
+            Thread.sleep(10);
+        }
+        catch (Exception e) {
+            System.out.println("Error in Thread.sleep");
+        }
     }
 }

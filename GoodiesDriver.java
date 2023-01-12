@@ -23,6 +23,10 @@ public class GoodiesDriver {
             new String[]{"Business Operation", "Customer", "Exit"}
         );
 
+        Menu businessMenu = new Menu(
+            new String[]{"View Inventory", "Re-stock", "View profits data", "Back to Main Menu"}
+        );
+
         CustomerMenu customerMenu = new CustomerMenu(products);
 
         // Initialize customer
@@ -36,11 +40,16 @@ public class GoodiesDriver {
             mainMenu.displayMenu();
             int selection = mainMenu.getInput();
 
+            // Business Operations selected
+            if (selection == 1) {
+                businessMenu.displayMenu();
+                int businessSelection = businessMenu.getInput();
+            }
+
             // Customer selected
-            if (selection == 2) {
+            else if (selection == 2) {
                 boolean continueShop = true;
                 do {
-                    System.out.println("\nWhat would you to buy?");
                     customerMenu.displayMenu();
                     int productIndex = customerMenu.getInput() - 1;
                     Product selectedProduct = customerMenu.getItem(productIndex);
@@ -60,6 +69,13 @@ public class GoodiesDriver {
                 quit = true;
             }
         } while (!quit);
+
+        // TODO store updated data
+        System.out.println("\033[91mWriting updated data to disk...\033[0m");
+
+        // Goodbye message
+
+        System.out.println("\033[91mSystems shutting down...\033[0m");
     }
 }
 

@@ -32,7 +32,9 @@ public class CustomerMenu extends Menu {
                     String.format("\033[91m[%2d]\033[0m %s", counter, product)
                 );
                 counter++;
+                delay();
             }
+            delay();
         }
     }
 
