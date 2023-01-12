@@ -15,6 +15,8 @@ public class GoodiesDriver {
         // Load data
         DataReader reader = new DataReader("data.txt");
         LinkedHashMap<String, Product[]> products = reader.parseData();
+        DataReader reader2 = new DataReader("data.txt"); // temporary
+        reader2.printRawData();
         
         // Initialize Menus
         Splash splash = new Splash("splash.txt");
@@ -60,6 +62,8 @@ public class GoodiesDriver {
                     Product selectedProduct = customerMenu.getItem(productIndex);
                     customer.addToTotal(selectedProduct.getSalePrice());
                     System.out.printf("You have added \033[92m%s\033[0m to your cart.\n", selectedProduct.getName());
+
+                    System.out.println("Updating registry...");
 
                     // prompt
                     System.out.println("Would you like to buy more? (y/n)");

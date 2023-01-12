@@ -25,6 +25,20 @@ public class DataReader {
         }
     }
 
+    // print the raw data for some reason (temporary, Elia said to do this apparently?)
+    public void printRawData() {
+        System.out.println("Loading Raw Data:");
+        boolean keepGoing = true;
+        do {
+            String line = sc.nextLine();
+            System.out.println(line);
+            if (line.equals("end")) {
+                // check for end
+                keepGoing = false;
+            }
+        } while (keepGoing);
+    }
+
     // Returns an ordered map of product categories and products.
     public LinkedHashMap<String, Product[]> parseData() {
         boolean keepGoing = true; // break would work better here but you took off points last time so i'm using this instead
