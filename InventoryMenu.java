@@ -9,11 +9,12 @@ Jieruei Chang, Melvin Huang, 2023 (Goodies Co Tryhards)
 import java.util.LinkedHashMap;
 
 public class InventoryMenu extends Menu {
+    private Inventory inventory;
     private LinkedHashMap<String, Product[]> products;
 
-    public InventoryMenu(LinkedHashMap<String, Product[]> products) {
+    public InventoryMenu(Inventory inventory) {
         super();
-        this.products = products;
+        this.products = inventory.getProducts();
         int numItems = 0;
         for (String key : products.keySet()) {
             numItems += products.get(key).length;

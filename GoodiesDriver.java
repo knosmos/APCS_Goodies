@@ -17,6 +17,7 @@ public class GoodiesDriver {
         LinkedHashMap<String, Product[]> products = reader.parseData();
         DataReader reader2 = new DataReader("data.txt"); // temporary
         reader2.printRawData();
+        Inventory inventory = new Inventory(products);
         
         // Initialize Menus
         Splash splash = new Splash("splash.txt");
@@ -31,8 +32,6 @@ public class GoodiesDriver {
 
         CustomerMenu customerMenu = new CustomerMenu(products);
 
-        InventoryMenu inventoryMenu = new InventoryMenu(products);
-
         // Initialize customer
         Customer customer = new Customer();
         Scanner scan = new Scanner(System.in);
@@ -46,11 +45,28 @@ public class GoodiesDriver {
 
             // Business Operations selected
             if (selection == 1) {
-                businessMenu.displayMenu();
-                int businessSelection = businessMenu.getInput();
-                if (businessSelection == 1) {
-                    inventoryMenu.displayMenu();
-                }
+                boolean continueBusinessOperations = true;
+                do {
+                    System.out.println("\nBusiness Operations");
+                    businessMenu.displayMenu();
+                    int businessSelection = businessMenu.getInput();
+                    if (businessSelection == 1) {
+                        // display Inventory
+                        InventoryMenu inventoryMenu = new InventoryMenu(inventory);
+                        inventoryMenu.displayMenu();
+                    }
+                    else if (businessSelection == 2) {
+                        // Re-stock
+
+                    }
+                    else if (businessSelection == 3){
+                        // View Profits data
+                    }
+                    else {
+                        // back to Main Menu
+                        continueBusinessOperations = false;
+                    }
+                } while (continueBusinessOperations);
             }
 
             // Customer selected
@@ -64,6 +80,7 @@ public class GoodiesDriver {
                     System.out.printf("You have added \033[92m%s\033[0m to your cart.\n", selectedProduct.getName());
 
                     System.out.println("Updating registry...");
+                    inventory.purchase(productIndex);
 
                     // prompt
                     System.out.println("Would you like to buy more? (y/n)");
