@@ -1,3 +1,12 @@
+/*
+Inventory class. Mostly just a wrapper for the LinkedHashMap<String, Product[]> of products/categories.
+Also contains methods for calculating profit data, as well as purchasing and restocking items.
+
+Project: Shopping System for Goodies Co with OOP concepts and file management
+Java 11
+Jieruei Chang, Melvin Huang, 2023 (Goodies Co Tryhards)
+*/
+
 import java.util.LinkedHashMap;
 
 public class Inventory {

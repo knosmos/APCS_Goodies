@@ -1,5 +1,5 @@
 /*
-Customer class.
+Customer class. Stores the total amount of money spent by the customer.
 
 Project: Shopping System for Goodies Co with OOP concepts and file management
 Java 11

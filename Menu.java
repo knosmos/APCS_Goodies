@@ -1,5 +1,5 @@
 /*
-Generic Menu.
+Generic Menu. Implements capability to display a menu and get + validate user input.
 
 Project: Shopping System for Goodies Co with OOP concepts and file management
 Java 11

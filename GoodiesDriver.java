@@ -15,8 +15,8 @@ public class GoodiesDriver {
         // Load data
         DataReader reader = new DataReader("data.txt");
         LinkedHashMap<String, Product[]> products = reader.parseData();
-        DataReader reader2 = new DataReader("data.txt"); // temporary
-        reader2.printRawData();
+        //DataReader reader2 = new DataReader("data.txt"); // temporary
+        //reader2.printRawData();
         Inventory inventory = new Inventory(products);
         
         // Initialize Menus
@@ -32,8 +32,7 @@ public class GoodiesDriver {
 
         CustomerMenu customerMenu = new CustomerMenu(products);
 
-        // Initialize customer
-        Customer customer = new Customer();
+        // initialize input handler
         Scanner scan = new Scanner(System.in);
 
         // Main Loop
@@ -75,6 +74,8 @@ public class GoodiesDriver {
             // Customer selected
             else if (selection == 2) {
                 boolean continueShop = true;
+                // Initialize customer
+                Customer customer = new Customer();
                 do {
                     customerMenu.displayMenu();
                     int productIndex = customerMenu.getInput() - 1;
@@ -99,11 +100,19 @@ public class GoodiesDriver {
             }
         } while (!quit);
 
-        // TODO store updated data
+        // store updated data
         System.out.println("\033[91mWriting updated data to disk...\033[0m");
+        try {
+            DataWriter writer = new DataWriter("data.txt");
+            writer.writeData(inventory);            
+        }
+        catch (Exception e) {
+            System.out.println("Error writing to disk.");
+            System.out.println(e);
+        }
+
 
         // Goodbye message
-
         System.out.println("\033[91mSystems shutting down...\033[0m");
     }
 }

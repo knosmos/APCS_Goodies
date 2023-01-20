@@ -1,5 +1,5 @@
 /*
-Customer menu.
+Customer menu. Allows for selection of items to purchase.
 
 Project: Shopping System for Goodies Co with OOP concepts and file management
 Java 11

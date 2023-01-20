@@ -1,5 +1,6 @@
 /*
 Reads and parses data.txt file, converting it to an ordered map of categories and Product arrays.
+Can also print the raw data, if such a use case arises.
 
 Project: Shopping System for Goodies Co with OOP concepts and file management
 Java 11

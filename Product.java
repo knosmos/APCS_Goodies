@@ -1,5 +1,5 @@
 /*
-Product class.
+Product class. Stores information (name, quantity, wholesale price, retail price) about a product.
 
 Project: Shopping System for Goodies Co with OOP concepts and file management
 Java 11
@@ -18,7 +18,7 @@ public class Product {
         this.quantity = quantity;
         this.costPrice = costPrice;
         this.salePrice = salePrice;
-        this.costPricePerItem = (double) costPrice / (double) quantity;
+        this.costPricePerItem = (double) costPrice / 45.0;
     }
 
     public double getCostPricePerItem(){

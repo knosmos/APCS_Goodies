@@ -1,5 +1,5 @@
 /*
-Splash header.
+Splash header. Pretty unnecessary but it looks cool.
 
 Project: Shopping System for Goodies Co with OOP concepts and file management
 Java 11
