@@ -57,10 +57,13 @@ public class GoodiesDriver {
                     }
                     else if (businessSelection == 2) {
                         // Re-stock
-
+                        System.out.print("Enter the index of the item you want to restock: ");
+                        int index = scan.nextInt();
+                        inventory.restock(index);
                     }
                     else if (businessSelection == 3){
                         // View Profits data
+                        inventory.displayProfitData();
                     }
                     else {
                         // back to Main Menu
