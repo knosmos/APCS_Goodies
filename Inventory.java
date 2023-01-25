@@ -10,7 +10,7 @@ Jieruei Chang, Melvin Huang, 2023 (Goodies Co Tryhards)
 import java.util.LinkedHashMap;
 
 public class Inventory {
-    LinkedHashMap<String, Product[]> products;
+    private LinkedHashMap<String, Product[]> products;
     private double revenue = 0;
     private double cost = 0;
 

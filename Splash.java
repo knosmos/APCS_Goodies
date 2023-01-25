@@ -12,9 +12,9 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Splash {
-    Scanner sc;
-    File file;
-    ArrayList<String> lines = new ArrayList<String>();
+    private Scanner sc;
+    private File file;
+    private ArrayList<String> lines = new ArrayList<String>();
 
     public Splash(String filename) {
         // load file

@@ -14,8 +14,8 @@ import java.util.LinkedHashMap;
 import java.util.ArrayList;
 
 public class DataReader {
-    Scanner sc;
-    File file;
+    private Scanner sc;
+    private File file;
     // Constructor (initializes file reader)
     public DataReader(String filename) {
         try {

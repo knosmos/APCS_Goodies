@@ -1,5 +1,5 @@
 /*
-Business inventory menu.
+Business inventory menu. Displays options for product and stock
 
 Project: Shopping System for Goodies Co with OOP concepts and file management
 Java 11
@@ -9,7 +9,6 @@ Jieruei Chang, Melvin Huang, 2023 (Goodies Co Tryhards)
 import java.util.LinkedHashMap;
 
 public class InventoryMenu extends Menu {
-    private Inventory inventory;
     private LinkedHashMap<String, Product[]> products;
 
     // Initialize products hashmap and get number of items
