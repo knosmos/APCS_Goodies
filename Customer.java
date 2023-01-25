@@ -8,12 +8,18 @@ Jieruei Chang, Melvin Huang, 2023 (Goodies Co Tryhards)
 
 public class Customer {
     private double total;
+
+    // initialize current total
     public Customer() {
         total = 0;
     }
+
+    // add item cost to total
     public void addToTotal(double cost) {
         total += cost;
     }
+
+    // get current total cost
     public double getTotal() {
         return total;
     }

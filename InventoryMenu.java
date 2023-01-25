@@ -12,6 +12,7 @@ public class InventoryMenu extends Menu {
     private Inventory inventory;
     private LinkedHashMap<String, Product[]> products;
 
+    // Initialize products hashmap and get number of items
     public InventoryMenu(Inventory inventory) {
         super();
         this.products = inventory.getProducts();
@@ -22,6 +23,7 @@ public class InventoryMenu extends Menu {
         this.setNumItems(numItems);
     }
 
+    // Display Inventory menu
     public void displayMenu() {
         int counter = 1;
         for (String key : products.keySet()) {
@@ -37,18 +39,5 @@ public class InventoryMenu extends Menu {
             }
             delay();
         }
-    }
-
-    public Product getItem(int index) {
-        int counter = 0;
-        for (String key : products.keySet()) {
-            for (Product product : products.get(key)) {
-                if (counter == index) {
-                    return product;
-                }
-                counter++;
-            }
-        }
-        return null;
     }
 }

@@ -13,24 +13,29 @@ public class Menu {
     private Scanner scan;
     private int numItems;
 
+    // Constructor for empty Menu; initializes input handler
     public Menu() {
         scan = new Scanner(System.in);
     }
 
+    // Constructor for Menu with items
     public Menu(String[] items) {
         this.setItems(items);
         scan = new Scanner(System.in);
     }
 
+    // Sets Menu items
     public void setItems(String[] items) {
         this.items = items;
         setNumItems(items.length);
     }
 
+    // Sets number of items
     public void setNumItems(int numItems) {
         this.numItems = numItems;
     }
 
+    // Display menu
     public void displayMenu() {
         for (int i=0; i < this.numItems; i++) {
             System.out.println(
@@ -40,6 +45,7 @@ public class Menu {
         }
     }
 
+    // Get menu selection from user and validate input
     public int getInput(){
         int result;
         do {

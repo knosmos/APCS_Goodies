@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class DataReader {
     Scanner sc;
     File file;
+    // Constructor (initializes file reader)
     public DataReader(String filename) {
         try {
             file = new File(filename);

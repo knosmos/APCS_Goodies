@@ -14,6 +14,8 @@ import java.io.IOException;
 
 public class DataWriter {
     private BufferedWriter writer;
+    
+    // Initialize filewriter
     public DataWriter(String filename) {
         try {
             writer = new BufferedWriter(new FileWriter(filename));

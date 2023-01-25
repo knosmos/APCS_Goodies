@@ -11,13 +11,12 @@ import java.util.Scanner;
 import java.util.LinkedHashMap;
 
 public class GoodiesDriver {
+    /*
+    Main program flow; handles menu commands and costomer interactions
+    */
     public static void main(String args[]) {
-        // Load data
-        DataReader reader = new DataReader("data.txt");
-        LinkedHashMap<String, Product[]> products = reader.parseData();
-        //DataReader reader2 = new DataReader("data.txt"); // temporary
-        //reader2.printRawData();
-        Inventory inventory = new Inventory(products);
+        // Load inventory
+        Inventory inventory = new Inventory("data.txt");
         
         // Initialize Menus
         Splash splash = new Splash("splash.txt");
@@ -30,7 +29,7 @@ public class GoodiesDriver {
             new String[]{"View Inventory", "Re-stock", "View profits data", "Back to Main Menu"}
         );
 
-        CustomerMenu customerMenu = new CustomerMenu(products);
+        CustomerMenu customerMenu = new CustomerMenu(inventory.getProducts());
 
         // initialize input handler
         Scanner scan = new Scanner(System.in);
@@ -38,6 +37,7 @@ public class GoodiesDriver {
         // Main Loop
         boolean quit = false;
         do {
+            // display initial selection menu
             splash.display();
             mainMenu.displayMenu();
             int selection = mainMenu.getInput();
@@ -58,7 +58,7 @@ public class GoodiesDriver {
                         // Re-stock
                         System.out.print("Enter the index of the item you want to restock: ");
                         int index = scan.nextInt();
-                        inventory.restock(index);
+                        inventory.restock(index - 1);
                     }
                     else if (businessSelection == 3){
                         // View Profits data
@@ -79,7 +79,7 @@ public class GoodiesDriver {
                 do {
                     customerMenu.displayMenu();
                     int productIndex = customerMenu.getInput() - 1;
-                    Product selectedProduct = customerMenu.getItem(productIndex);
+                    Product selectedProduct = inventory.getItem(productIndex);
                     customer.addToTotal(selectedProduct.getSalePrice());
                     System.out.printf("You have added \033[92m%s\033[0m to your cart.\n", selectedProduct.getName());
 
